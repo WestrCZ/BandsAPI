@@ -1,0 +1,6 @@
+@BandsAPI_HostAddress = http://localhost:5186
+
+GET {{BandsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Rj3TIUZMQerQikezDYzbQjzOp+UF+XN0Mcyq4RB2b7U=",
+  "Source": "BandsAPI.Api",
+  "BasePath": "_content/BandsAPI.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

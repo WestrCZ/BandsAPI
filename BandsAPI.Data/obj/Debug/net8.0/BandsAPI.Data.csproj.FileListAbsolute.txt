@@ -1,0 +1,13 @@
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\bin\Debug\net8.0\BandsAPI.Data.deps.json
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\bin\Debug\net8.0\BandsAPI.Data.dll
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\bin\Debug\net8.0\BandsAPI.Data.pdb
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.csproj.AssemblyReference.cache
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.AssemblyInfoInputs.cache
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.AssemblyInfo.cs
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.csproj.CoreCompileInputs.cache
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\EFCoreNpgsqlNodaTime.cs
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.dll
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\refint\BandsAPI.Data.dll
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.pdb
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\ref\BandsAPI.Data.dll
