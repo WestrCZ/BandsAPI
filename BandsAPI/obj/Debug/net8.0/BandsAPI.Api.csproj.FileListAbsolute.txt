@@ -105,9 +105,10 @@ C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\staticwebassets\m
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BandsAPI.Api.props
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\scopedcss\bundle\BandsAPI.Api.styles.css
-C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.Api.csproj.CopyComplete
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.Api.dll
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\refint\BandsAPI.Api.dll
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.Api.pdb
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.Api.genruntimeconfig.cache
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\ref\BandsAPI.Api.dll
+C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.Api.sourcelink.json
+C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.690D3468.Up2Date

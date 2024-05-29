@@ -1,4 +1,4 @@
-﻿using BandsAPI.Api.Models.Songs;
+using BandsAPI.Api.Models.Songs;
 using BandsAPI.Api.Services;
 using BandsAPI.Api.Utilities;
 using BandsAPI.Data;
@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BandsAPI.Api.Controllers;
 [ApiController]
-[Route("BandsAPI/SongsController/")]
+[Route("api/SongsController/")]
 public class SongController : ControllerBase
 {
     private readonly SongService songService;
@@ -22,25 +22,41 @@ public class SongController : ControllerBase
         this.mapper = mapper;
     }
 
-    [HttpGet("api/v1/Songs/GetSongs")]
-    public async Task<ActionResult<IEnumerable<SongDetail>>> GetAllSongsAsync()
+    [HttpGet("GetList")]
+    public async Task<ActionResult<IEnumerable<SongDetail>>> GetList ()
     {
-        return Ok(await songService.GetAllAsync());
+        var result = await songService.GetListAsync();
+        if (!result!.Any())
+        {
+            return NotFound();
+        }
+        return Ok(result);
     }
-    [HttpGet("api/v1/Songs/GetSong/{id}")]
-    public async Task<ActionResult<SongDetail>> GetSongByIdAsync([FromRoute] Guid id)
+    [HttpGet("GetListByAuthor/{authorId}")]
+    public async Task<ActionResult<IEnumerable<SongDetail>>> GetList ([FromRoute] Guid authorId)
     {
-        var targetDetail = await songService.GetByIdAsync(id);
+        var result = await songService.GetListByAuthorAsync(authorId);
+        if (!result!.Any())
+        {
+            return NotFound();
+        }
+        return Ok(result);
+    }
+    [HttpGet("Get/{id}")]
+    public async Task<ActionResult<SongDetail>> Get ([FromRoute] Guid id)
+    {
+        var targetDetail = await songService.GetAsync(id);
         return targetDetail != null ? Ok(targetDetail) : NotFound();
     }
-    [HttpPost("api/v1/Songs/CreateSong")]
-    public async Task<ActionResult<SongDetail>> CreateSongAsync([FromBody] SongCreate source)
+    [HttpPost("Create")]
+    public async Task<ActionResult<SongDetail>> Create ([FromBody] SongCreate source)
     {
         var dbEntityDetail = await songService.CreateAsync(source);
+        if (!ModelState.IsValid) { return ValidationProblem(ModelState); }
         return dbEntityDetail != null ? Ok(dbEntityDetail) : NotFound();
     }
-    [HttpPatch("api/v1/Songs/UpdateSong/{id}")]
-    public async Task<ActionResult<SongDetail>> UpdateSongAsync(
+    [HttpPatch("Update/{id}")]
+    public async Task<ActionResult<SongDetail>> Update (
         [FromBody] JsonPatchDocument<SongUpdate> patch,
         [FromRoute] Guid id)
     {
@@ -51,10 +67,10 @@ public class SongController : ControllerBase
         if (!ModelState.IsValid) return ValidationProblem(ModelState);
         return Ok(await songService.UpdateAsync(entityToUpdate, dbEntity));
     }
-    [HttpDelete("api/v1/Songs/DeleteSong/{id}")]
+    [HttpDelete("Delete/{id}")]
     public async Task<IActionResult> DeleteSongAsync([FromRoute] Guid id)
     {
-        var result = await songService.DeleteByIdAsync(id);
-        return result == true ? NoContent() : NotFound();
+        var result = await songService.DeleteAsync(id);
+        return result == new OkResult() ? NoContent() : NotFound();
     }
 }

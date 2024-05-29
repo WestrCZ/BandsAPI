@@ -1,4 +1,4 @@
-﻿using BandsAPI.Api.Models.Authors;
+using BandsAPI.Api.Models.Authors;
 using BandsAPI.Api.Models.Songs;
 using BandsAPI.Api.Services;
 using BandsAPI.Api.Utilities;
@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BandsAPI.Api.Controllers;
 [ApiController]
-[Route("BandsAPI/AuthorController/")]
+[Route("api/v1/AuthorController/")]
 public class AuthorController : ControllerBase
 {
     private readonly AppDbContext context;
@@ -22,25 +22,26 @@ public class AuthorController : ControllerBase
         this.authorService = authorService;
     }
 
-    [HttpGet("api/v1/Authors/GetAuthors")]
-    public async Task<ActionResult<IEnumerable<AuthorDetail>>> GetAllAuthorsAsync()
+    [HttpGet("GetList")]
+    public async Task<ActionResult<IEnumerable<AuthorDetail>>> GetList ()
     {
-        return Ok(await authorService.GetAllAsync());
+        return Ok(await authorService.GetListAsync());
     }
-    [HttpGet("api/v1/Authors/GetAuthor/{id}")]
-    public async Task<ActionResult<AuthorDetail>> GetAuthorByIdAsync([FromRoute] Guid id)
+    [HttpGet("Get/{id}")]
+    public async Task<ActionResult<AuthorDetail>> Get ([FromRoute] Guid id)
     {
-        var targetDetail = await authorService.GetByIdAsync(id);
+        var targetDetail = await authorService.GetAsync(id);
         return targetDetail != null ? Ok(targetDetail) : NotFound();
     }
-    [HttpPost("api/v1/Authors/CreateAuthor")]
-    public async Task<ActionResult<AuthorDetail>> CreateAuthorAsync([FromBody] AuthorCreate source)
+    [HttpPost("Create")]
+    public async Task<ActionResult<AuthorDetail>> Create([FromBody] AuthorCreate source)
     {
         var dbEntityDetail = await authorService.CreateAsync(source);
+        if (!ModelState.IsValid) { return ValidationProblem(ModelState); }
         return dbEntityDetail != null ? Ok(dbEntityDetail) : NotFound();
     }
-    [HttpPatch("api/v1/Authors/UpdateAuthor/{id}")]
-    public async Task<ActionResult<AuthorDetail>> UpdateAuthorAsync(
+    [HttpPatch("Update/{id}")]
+    public async Task<ActionResult<AuthorDetail>> Update(
         [FromBody] JsonPatchDocument<AuthorUpdate> patch, 
         [FromRoute] Guid id)
     {
@@ -51,10 +52,10 @@ public class AuthorController : ControllerBase
         if (!ModelState.IsValid) { return ValidationProblem(ModelState);}
         return Ok(await authorService.UpdateAsync(entityToUpdate, dbEntity));
     }
-    [HttpDelete("api/v1/Authors/DeleteAuthor/{id}")]
-    public async Task<ActionResult<AuthorDetail>> DeleteAuthorAsync([FromRoute] Guid id)
+    [HttpDelete("Delete/{id}")]
+    public async Task<ActionResult<AuthorDetail>> Delete([FromRoute] Guid id)
     {
-        var result = await authorService.DeleteByIdAsync(id);
-        return result == true ? NoContent() : NotFound();
+        var result = await authorService.DeleteAsync(id);
+        return result == new OkResult() ? NoContent() : NotFound();
     }
 }

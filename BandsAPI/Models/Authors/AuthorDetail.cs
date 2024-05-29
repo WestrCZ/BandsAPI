@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using BandsAPI.Api.Models.Songs;
 using BandsAPI.Api.Utilities;
 using BandsAPI.Data.Entities;
@@ -13,8 +13,6 @@ public class AuthorDetail
     public string Name { get; set; } = null!;
     [JsonProperty("description")]
     public string? Description { get; set; }
-    [JsonProperty("songs")]
-    public IEnumerable<SongDetail>? Songs { get; set; } = Enumerable.Empty<SongDetail>();
 }
 public static class AuthorDetailExtensions
 {
@@ -25,7 +23,6 @@ public static class AuthorDetailExtensions
             Id = source.Id,
             Name = source.Name,
             Description = source.Description,
-            Songs = source.Songs != null ? source.Songs.Select(mapper.ToDetail) : Enumerable.Empty<SongDetail>()
         };
     }
 }

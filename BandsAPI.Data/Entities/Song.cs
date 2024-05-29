@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace BandsAPI.Data.Entities;
 [Table(nameof(Song))]
 public class Song

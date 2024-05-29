@@ -1,7 +1,8 @@
-﻿using BandsAPI.Api.Models.Songs;
+using BandsAPI.Api.Models.Songs;
 using BandsAPI.Api.Utilities;
 using BandsAPI.Data;
 using BandsAPI.Data.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BandsAPI.Api.Services;
@@ -14,37 +15,41 @@ public class SongService
         this.context = context;
         this.mapper = mapper;
     }
-    public async Task<SongDetail?> GetByIdAsync(Guid id)
+
+    public async Task<SongDetail?> GetAsync(Guid id)
     {
         var dbEntity = await context.Songs.Include(x => x.Author).FirstOrDefaultAsync(x => x.Id == id);
         return dbEntity != null ? mapper.ToDetail(dbEntity) : null;
     }
-
-    public async Task<IEnumerable<SongDetail>?> GetAllAsync()
+    public async Task<IEnumerable<SongDetail>?> GetListAsync()
     {
         var dbEntities = await context.Songs.Include(x => x.Author).ToListAsync();
         return dbEntities.Select(mapper.ToDetail);
     }
-
+    public async Task<IEnumerable<SongDetail>?> GetListByAuthorAsync(Guid authorId)
+    {
+        var dbEntities = await context.Songs.Include(x=> x.Author).Where(x=> x.AuthorId == authorId).ToListAsync();
+        return dbEntities.Select(mapper.ToDetail);
+    }
     public async Task<SongDetail?> CreateAsync(SongCreate source)
     {
         var newEntity = mapper.FromCreate(source);
         context.Songs.Add(newEntity);
         await context.SaveChangesAsync();
-        return newEntity != null ? await GetByIdAsync(newEntity.Id) : null;
+        return newEntity != null ? await GetAsync(newEntity.Id) : null;
     }
     public async Task<SongDetail?> UpdateAsync(SongUpdate source, Song target)
     {
         mapper.ApplyUpdate(source, target);
         await context.SaveChangesAsync();
-        return await GetByIdAsync(target.Id);
+        return await GetAsync(target.Id);
     }
-    public async Task<bool> DeleteByIdAsync(Guid id)
+    public async Task<ActionResult> DeleteAsync(Guid id)
     {
         var dbEntity = await context.Songs.FirstOrDefaultAsync(x => x.Id == id);
-        if (dbEntity == null) return false;
+        if (dbEntity == null) return new NotFoundResult();
         context.Songs.Remove(dbEntity);
         await context.SaveChangesAsync();
-        return true;
+        return new OkResult();
     }
 }

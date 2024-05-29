@@ -11,3 +11,4 @@ C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Dat
 C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\refint\BandsAPI.Data.dll
 C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.pdb
 C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\ref\BandsAPI.Data.dll
+C:\Users\janek\source\repos\BandsAPI\BandsAPI.Data\obj\Debug\net8.0\BandsAPI.Data.sourcelink.json
