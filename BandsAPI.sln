@@ -3,12 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandsAPI.Api", "BandsAPI\BandsAPI.Api.csproj", "{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BandsAPI.Api", "BandsAPI\BandsAPI.Api.csproj", "{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}"
 	ProjectSection(ProjectDependencies) = postProject
+		{2B29E26A-B3E3-4959-9043-3E3C0CE8F194} = {2B29E26A-B3E3-4959-9043-3E3C0CE8F194}
 		{A57528D8-8BBF-41E8-8A3F-F6ABC2860527} = {A57528D8-8BBF-41E8-8A3F-F6ABC2860527}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandsAPI.Data", "BandsAPI.Data\BandsAPI.Data.csproj", "{A57528D8-8BBF-41E8-8A3F-F6ABC2860527}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BandsAPI.Data", "BandsAPI.Data\BandsAPI.Data.csproj", "{A57528D8-8BBF-41E8-8A3F-F6ABC2860527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandsAPI.Utilities", "BandsAPI.Utilities\BandsAPI.Utilities.csproj", "{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +27,10 @@ Global
 		{A57528D8-8BBF-41E8-8A3F-F6ABC2860527}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A57528D8-8BBF-41E8-8A3F-F6ABC2860527}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A57528D8-8BBF-41E8-8A3F-F6ABC2860527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

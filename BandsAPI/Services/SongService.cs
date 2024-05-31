@@ -1,16 +1,18 @@
 using BandsAPI.Api.Models.Songs;
-using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data;
 using BandsAPI.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using BandsAPI.Utilities.Helpers;
+using BandsAPI.Utilities;
 
 namespace BandsAPI.Api.Services;
 public class SongService
 {
     private readonly AppDbContext context;
-    private readonly AppMapper mapper;
-    public SongService(AppDbContext context, AppMapper mapper)
+    private readonly IAppMapper mapper;
+    public SongService(AppDbContext context, IAppMapper mapper)
     {
         this.context = context;
         this.mapper = mapper;
@@ -31,12 +33,19 @@ public class SongService
         var dbEntities = await context.Songs.Include(x=> x.Author).Where(x=> x.AuthorId == authorId).ToListAsync();
         return dbEntities.Select(mapper.ToDetail);
     }
-    public async Task<SongDetail?> CreateAsync(SongCreate source)
+    public async Task<ServiceResult<SongDetail>> CreateAsync(SongCreate source)
     {
+        var response = ResultHelper.Create<SongDetail>();
         var newEntity = mapper.FromCreate(source);
         context.Songs.Add(newEntity);
         await context.SaveChangesAsync();
-        return newEntity != null ? await GetAsync(newEntity.Id) : null;
+        response.Item = mapper.ToDetail(newEntity);
+        var uniqueNameCheck = context.Set<Song>().Any(x => x.Name == source.Name);
+        if (!uniqueNameCheck)
+        {
+            response.AddError(nameof(source.Name), "Name must be unique");
+        }
+        return response;
     }
     public async Task<SongDetail?> UpdateAsync(SongUpdate source, Song target)
     {

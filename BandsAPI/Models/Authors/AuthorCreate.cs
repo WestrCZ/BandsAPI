@@ -1,4 +1,4 @@
-﻿using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data.Entities;
 using Newtonsoft.Json;
 
@@ -12,7 +12,7 @@ public class AuthorCreate
 }
 public static class AuthorCreateExtensions
 {
-    public static Author FromCreate(this AppMapper mapper, AuthorCreate source)
+    public static Author FromCreate(this IAppMapper mapper, AuthorCreate source)
     {
         return new Author
         {

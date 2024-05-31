@@ -1,4 +1,4 @@
-﻿using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data.Entities;
 using Newtonsoft.Json;
 
@@ -12,7 +12,7 @@ public class SongCreate
 }
 public static class SongCreateExtensions
 {
-    public static Song FromCreate(this AppMapper mapper, SongCreate source)
+    public static Song FromCreate(this IAppMapper mapper, SongCreate source)
     {
         return new Song
         {

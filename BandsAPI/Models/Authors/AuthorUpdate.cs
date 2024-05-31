@@ -1,4 +1,4 @@
-﻿using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data.Entities;
 using Newtonsoft.Json;
 
@@ -14,7 +14,7 @@ public class AuthorUpdate
 }
 public static class AuthorUpdateExtensions
 {
-    public static AuthorUpdate ToUpdate(this AppMapper mapper, Author source)
+    public static AuthorUpdate ToUpdate(this IAppMapper mapper, Author source)
     {
         return new AuthorUpdate
         {
@@ -23,7 +23,7 @@ public static class AuthorUpdateExtensions
             Description = source.Description,
         };
     }
-    public static void ApplyUpdate(this AppMapper mapper, AuthorUpdate source ,Author target)
+    public static void ApplyUpdate(this IAppMapper mapper, AuthorUpdate source ,Author target)
     {
         target.Name = source.Name;
         target.Description = source.Description;
