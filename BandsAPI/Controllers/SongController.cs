@@ -1,6 +1,6 @@
 using BandsAPI.Api.Models.Songs;
 using BandsAPI.Api.Services;
-using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities;
 using BandsAPI.Data;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;

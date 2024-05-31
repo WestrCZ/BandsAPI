@@ -1,5 +1,5 @@
 using BandsAPI.Api.Models.InnerModels;
-using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data.Entities;
 using Newtonsoft.Json;
 namespace BandsAPI.Api.Models.Songs;
@@ -15,7 +15,7 @@ public class SongDetail
 }
 public static class SongDetailExtensions
 {
-    public static SongDetail ToDetail(this AppMapper mapper, Song source)
+    public static SongDetail ToDetail(this IAppMapper mapper, Song source)
     {
         return new SongDetail
         {
@@ -24,7 +24,7 @@ public static class SongDetailExtensions
             Author = new GenericInnerModel { Id = source.AuthorId, Name = source.Author!.Name},
         };
     }
-    public static Song FromDetail(this AppMapper mapper, SongDetail source)
+    public static Song FromDetail(this IAppMapper mapper, SongDetail source)
     {
         return new()
         {

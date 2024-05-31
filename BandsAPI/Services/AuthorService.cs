@@ -1,18 +1,19 @@
 using BandsAPI.Api.Models.Authors;
-using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using BandsAPI.Api.Models.Songs;
 using BandsAPI.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http.HttpResults;
+using BandsAPI.Utilities.Helpers;
+using BandsAPI.Utilities;
 
 namespace BandsAPI.Api.Services;
 public class AuthorService
 {
-    private readonly AppMapper mapper;
+    private readonly IAppMapper mapper;
     private readonly AppDbContext context;
-    public AuthorService(AppMapper mapper, AppDbContext context)
+    public AuthorService(IAppMapper mapper, AppDbContext context)
     {
         this.mapper = mapper;
         this.context = context;
@@ -28,12 +29,22 @@ public class AuthorService
         var dbEntity = await context.Authors.FirstOrDefaultAsync(x => x.Id == id);
         return dbEntity != null ? mapper.ToDetail(dbEntity) : null;
     }
-    public async Task<AuthorDetail?> CreateAsync(AuthorCreate source)
+    public async Task<ServiceResult<AuthorDetail>> CreateAsync(AuthorCreate source)
     {
+        var result = ResultHelper.Create<AuthorDetail>();
         var newEntity = mapper.FromCreate(source);
-        context.Authors.Add(newEntity);
-        await context.SaveChangesAsync();
-        return newEntity != null ? await GetAsync(newEntity.Id) : null;
+        result.Item = mapper.ToDetail(newEntity);
+        var uniqueNameCheck = context.Set<Author>().Any(x => x.Name.Equals(source.Name));
+        if (!uniqueNameCheck)
+        {
+            result.AddError(nameof(source.Name), "not-unique");
+        }
+        if (result.Success)
+        {
+            context.Authors.Add(newEntity);
+            await context.SaveChangesAsync();
+        }
+        return result;
     }
     public async Task<AuthorDetail?> UpdateAsync(AuthorUpdate source, Author target)
     {

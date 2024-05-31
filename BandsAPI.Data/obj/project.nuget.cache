@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zeJxs7taTRA=",
+  "dgSpecHash": "2FT26+KpwKo=",
   "success": true,
   "projectFilePath": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI.Data\\BandsAPI.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\janek\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\janek\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.0\\microsoft.aspnetcore.jsonpatch.8.0.0.nupkg.sha512",
     "C:\\Users\\janek\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.0\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.0.nupkg.sha512",
     "C:\\Users\\janek\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -27,6 +28,7 @@
     "C:\\Users\\janek\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.0\\npgsql.entityframeworkcore.postgresql.8.0.0.nupkg.sha512",
     "C:\\Users\\janek\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql.nodatime\\8.0.0\\npgsql.entityframeworkcore.postgresql.nodatime.8.0.0.nupkg.sha512",
     "C:\\Users\\janek\\.nuget\\packages\\npgsql.nodatime\\8.0.0\\npgsql.nodatime.8.0.0.nupkg.sha512",
+    "C:\\Users\\janek\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\janek\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
   ],
   "logs": []

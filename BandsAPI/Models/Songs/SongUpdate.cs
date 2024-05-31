@@ -1,4 +1,4 @@
-﻿using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data.Entities;
 using Newtonsoft.Json;
 namespace BandsAPI.Api.Models.Songs;
@@ -13,7 +13,7 @@ public class SongUpdate
 }
 public static class SongUpdateExtensions
 {
-    public static SongUpdate ToUpdate(this AppMapper mapper, Song source)
+    public static SongUpdate ToUpdate(this IAppMapper mapper, Song source)
     {
         return new SongUpdate
         {
@@ -22,7 +22,7 @@ public static class SongUpdateExtensions
             AuthorId = source.AuthorId,
         };
     }
-    public static void ApplyUpdate(this AppMapper mapper, SongUpdate source, Song target)
+    public static void ApplyUpdate(this IAppMapper mapper, SongUpdate source, Song target)
     {
         target.Name = source.Name;
         target.AuthorId = source.AuthorId;

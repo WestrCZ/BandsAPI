@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
-using BandsAPI.Api.Models.Songs;
-using BandsAPI.Api.Utilities;
+using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data.Entities;
 
 namespace BandsAPI.Api.Models.Authors;
@@ -16,7 +15,7 @@ public class AuthorDetail
 }
 public static class AuthorDetailExtensions
 {
-    public static AuthorDetail ToDetail(this AppMapper mapper, Author source)
+    public static AuthorDetail ToDetail(this IAppMapper mapper, Author source)
     {
         return new AuthorDetail
         {
