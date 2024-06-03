@@ -2,25 +2,20 @@ using BandsAPI.Api.Models.Songs;
 using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data;
 using BandsAPI.Data.Entities;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BandsAPI.Utilities.Helpers;
 using BandsAPI.Utilities;
+using BandsAPI.Api.Services.Interfaces;
 
 namespace BandsAPI.Api.Services;
-public class SongService
+public class SongService(AppDbContext context, IAppMapper mapper) : ISongService
 {
-    private readonly AppDbContext context;
-    private readonly IAppMapper mapper;
-    public SongService(AppDbContext context, IAppMapper mapper)
-    {
-        this.context = context;
-        this.mapper = mapper;
-    }
+    private readonly AppDbContext context = context;
+    private readonly IAppMapper mapper = mapper;
 
     public async Task<SongDetail?> GetAsync(Guid id)
     {
-        var dbEntity = await context.Songs.Include(x => x.Author).FirstOrDefaultAsync(x => x.Id == id);
+        var dbEntity = await context.Songs.Include(x => x.Author).FirstOrDefaultAsync(x => x.Id.Equals(id));
         return dbEntity != null ? mapper.ToDetail(dbEntity) : null;
     }
     public async Task<IEnumerable<SongDetail>?> GetListAsync()
@@ -28,37 +23,48 @@ public class SongService
         var dbEntities = await context.Songs.Include(x => x.Author).ToListAsync();
         return dbEntities.Select(mapper.ToDetail);
     }
-    public async Task<IEnumerable<SongDetail>?> GetListByAuthorAsync(Guid authorId)
+    public async Task<IEnumerable<SongDetail>?> GetByAuthorAsync(Guid id)
     {
-        var dbEntities = await context.Songs.Include(x=> x.Author).Where(x=> x.AuthorId == authorId).ToListAsync();
+        var dbEntities = await context.Songs.Include(x=> x.Author).Where(x => x.AuthorId.Equals(id)).ToListAsync();
+        return dbEntities.Select(mapper.ToDetail);
+    }
+    public async Task<IEnumerable<SongDetail>?> GetByNameAsync(string name)
+    {
+        var dbEntities = await context.Set<Song>().Include(x => x.Author).Where(x => x.Name.Equals(name)).ToListAsync();
         return dbEntities.Select(mapper.ToDetail);
     }
     public async Task<ServiceResult<SongDetail>> CreateAsync(SongCreate source)
     {
-        var response = ResultHelper.Create<SongDetail>();
+        var result = ResultHelper.Create<SongDetail>();
         var newEntity = mapper.FromCreate(source);
         context.Songs.Add(newEntity);
         await context.SaveChangesAsync();
-        response.Item = mapper.ToDetail(newEntity);
-        var uniqueNameCheck = context.Set<Song>().Any(x => x.Name == source.Name);
-        if (!uniqueNameCheck)
+        result.Item = mapper.ToDetail(newEntity);
+        var uniqueNameCheck = context.Set<Song>().Any(x => x.Name.Equals(source.Name));
+        return result;
+    }
+    public async Task<ServiceResult<SongDetail>> UpdateAsync(SongUpdate source, Song target)
+    {
+        var result = ResultHelper.Create<SongDetail>();
+        if (target == null) { result.AddError(nameof(target.Id), "not-found");}
+        mapper.ApplyUpdate(source, target!);
+        if (result.Success)
         {
-            response.AddError(nameof(source.Name), "Name must be unique");
+            await context.SaveChangesAsync();
         }
-        return response;
+        result.Item = await GetAsync(target!.Id);
+        return result;
     }
-    public async Task<SongDetail?> UpdateAsync(SongUpdate source, Song target)
+    public async Task<EmptyServiceResult> DeleteAsync(Guid id)
     {
-        mapper.ApplyUpdate(source, target);
-        await context.SaveChangesAsync();
-        return await GetAsync(target.Id);
-    }
-    public async Task<ActionResult> DeleteAsync(Guid id)
-    {
-        var dbEntity = await context.Songs.FirstOrDefaultAsync(x => x.Id == id);
-        if (dbEntity == null) return new NotFoundResult();
-        context.Songs.Remove(dbEntity);
-        await context.SaveChangesAsync();
-        return new OkResult();
+        var result = ResultHelper.Empty();
+        var dbEntity = await context.Songs.FirstOrDefaultAsync(x => x.Id.Equals(id));
+        if (dbEntity == null) { result.AddError(nameof(id), "not-found"); }
+        if (result.Success)
+        {
+            context.Songs.Remove(dbEntity!);
+            await context.SaveChangesAsync();
+        }
+        return result;
     }
 }

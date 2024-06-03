@@ -6,6 +6,7 @@ using BandsAPI.Data;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using BandsAPI.Api.Services.Interfaces;
 
 namespace BandsAPI.Api.Controllers;
 [ApiController]
@@ -25,7 +26,22 @@ public class AuthorController : ControllerBase
     [HttpGet("GetList")]
     public async Task<ActionResult<IEnumerable<AuthorDetail>>> GetList ()
     {
-        return Ok(await authorService.GetListAsync());
+        var result = await authorService.GetListAsync();
+        if (!result!.Any())
+        {
+            return NotFound();
+        }
+        return Ok(result);
+    }
+    [HttpGet("GetByName")]
+    public async Task<ActionResult<IEnumerable<AuthorDetail>>> GetByName(string name)
+    {
+        var result = await authorService.GetByNameAsync(name);
+        if (!result!.Any())
+        {
+            return NotFound();
+        }
+        return Ok(result);
     }
     [HttpGet("Get/{id}")]
     public async Task<ActionResult<AuthorDetail>> Get ([FromRoute] Guid id)
@@ -36,26 +52,32 @@ public class AuthorController : ControllerBase
     [HttpPost("Create")]
     public async Task<ActionResult<AuthorDetail>> Create([FromBody] AuthorCreate source)
     {
-        var dbEntityDetail = await authorService.CreateAsync(source);
+        var result = await authorService.CreateAsync(source);
+        ModelState.AddAllErrors(result);
         if (!ModelState.IsValid) { return ValidationProblem(ModelState); }
-        return dbEntityDetail != null ? Ok(dbEntityDetail) : NotFound();
+        var url = Url.Action(nameof(Get), new { result.Item!.Id }) ?? throw new Exception("failed to generate url");
+        return Created(url, result.Item);
     }
     [HttpPatch("Update/{id}")]
     public async Task<ActionResult<AuthorDetail>> Update(
         [FromBody] JsonPatchDocument<AuthorUpdate> patch, 
         [FromRoute] Guid id)
     {
-        var dbEntity = await context.Authors.FirstOrDefaultAsync(x => x.Id == id);
-        if (dbEntity == null) return NotFound();
-        var entityToUpdate = mapper.ToUpdate(dbEntity);
-        patch.ApplyTo(entityToUpdate);
+        var target = mapper.FromDetail(await authorService.GetAsync(id));
+        if (target == null) return NotFound();
+        var targetUpdateModel = mapper.ToUpdate(target);
+        patch.ApplyTo(targetUpdateModel);
+        var result = await authorService.UpdateAsync(targetUpdateModel, target);
+        ModelState.AddAllErrors(result);
         if (!ModelState.IsValid) { return ValidationProblem(ModelState);}
-        return Ok(await authorService.UpdateAsync(entityToUpdate, dbEntity));
+        return Ok(result.Item);
     }
     [HttpDelete("Delete/{id}")]
     public async Task<ActionResult<AuthorDetail>> Delete([FromRoute] Guid id)
     {
         var result = await authorService.DeleteAsync(id);
-        return result == new OkResult() ? NoContent() : NotFound();
+        ModelState.AddAllErrors(result);
+        if (!ModelState.IsValid) { return ValidationProblem(ModelState); }
+        return NoContent();
     }
 }

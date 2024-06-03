@@ -1,6 +1,7 @@
 using BandsAPI.Utilities.Interfaces;
 using BandsAPI.Data.Entities;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace BandsAPI.Api.Models.Songs;
 public class SongCreate
