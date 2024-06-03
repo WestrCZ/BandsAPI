@@ -21,7 +21,7 @@ public static class SongDetailExtensions
         {
             Id = source.Id,
             Name = source.Name,
-            Author = new GenericInnerModel { Id = source.AuthorId, Name = source.Author!.Name},
+            Author = new GenericInnerModel { Id = source.AuthorId, Name = source.Author!.Name },
         };
     }
     public static Song FromDetail(this IAppMapper mapper, SongDetail source)

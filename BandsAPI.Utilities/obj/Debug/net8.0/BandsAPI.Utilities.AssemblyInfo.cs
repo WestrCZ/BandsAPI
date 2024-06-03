@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BandsAPI.Utilities")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c7bff8479ecaa44be7186948571ce93822f298f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eb374def008cf1b46aedca0ff9460e20c8c7355")]
 [assembly: System.Reflection.AssemblyProductAttribute("BandsAPI.Utilities")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BandsAPI.Utilities")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

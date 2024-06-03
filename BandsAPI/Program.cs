@@ -2,9 +2,9 @@ using BandsAPI.Api.Services;
 using BandsAPI.Utilities;
 using BandsAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using BandsAPI.Utilities.Interfaces;
 
 namespace BandsAPI;
-
 public class Program
 {
     public static void Main(string[] args)
@@ -19,8 +19,8 @@ public class Program
 
         builder.Services.AddScoped<SongService>();
         builder.Services.AddScoped<AuthorService>();
+        builder.Services.AddScoped<IAppMapper, AppMapper>();
         builder.Services.AddScoped<AppMapper>();
-        builder.Services.AddDbContext<AppDbContext>();
         
 
         // Add services to the container.

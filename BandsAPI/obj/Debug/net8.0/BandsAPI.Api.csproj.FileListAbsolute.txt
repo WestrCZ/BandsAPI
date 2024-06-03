@@ -1,4 +1,3 @@
-C:\Users\janek\source\repos\BandsAPI\BandsAPI\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\bin\Debug\net8.0\appsettings.json
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\bin\Debug\net8.0\BandsAPI.Api.exe
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\bin\Debug\net8.0\BandsAPI.Api.deps.json
@@ -112,3 +111,6 @@ C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.Api.genr
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\ref\BandsAPI.Api.dll
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.Api.sourcelink.json
 C:\Users\janek\source\repos\BandsAPI\BandsAPI\obj\Debug\net8.0\BandsAPI.690D3468.Up2Date
+C:\Users\janek\source\repos\BandsAPI\BandsAPI\bin\Debug\net8.0\BandsAPI.Utilities.dll
+C:\Users\janek\source\repos\BandsAPI\BandsAPI\bin\Debug\net8.0\BandsAPI.Utilities.pdb
+C:\Users\janek\source\repos\BandsAPI\BandsAPI\bin\Debug\net8.0\appsettings.local.json

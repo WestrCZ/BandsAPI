@@ -10,7 +10,7 @@ using BandsAPI.Api.Services.Interfaces;
 
 namespace BandsAPI.Api.Controllers;
 [ApiController]
-[Route("api/v1/AuthorController/")]
+[Route("api/v1/[controller]/")]
 public class AuthorController : ControllerBase
 {
     private readonly AppDbContext context;

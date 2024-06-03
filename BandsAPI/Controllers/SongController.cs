@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BandsAPI.Api.Controllers;
 [ApiController]
-[Route("api/SongsController/")]
+[Route("api/[controller]/")]
 public class SongController : ControllerBase
 {
     private readonly SongService songService;

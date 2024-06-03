@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BandsAPI.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d25b0b69078931b7fd6c2466ddd82757c1a44516")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eb374def008cf1b46aedca0ff9460e20c8c7355")]
 [assembly: System.Reflection.AssemblyProductAttribute("BandsAPI.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BandsAPI.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

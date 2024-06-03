@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BandsAPI.Api", "BandsAPI\Ba
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BandsAPI.Data", "BandsAPI.Data\BandsAPI.Data.csproj", "{A57528D8-8BBF-41E8-8A3F-F6ABC2860527}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandsAPI.Utilities", "BandsAPI.Utilities\BandsAPI.Utilities.csproj", "{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BandsAPI.Utilities", "BandsAPI.Utilities\BandsAPI.Utilities.csproj", "{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
