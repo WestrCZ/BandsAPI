@@ -24,4 +24,13 @@ public static class AuthorDetailExtensions
             Description = source.Description,
         };
     }
+    public static Author FromDetail(this IAppMapper mapper, AuthorDetail source)
+    {
+        return new()
+        {
+            Id = source.Id,
+            Name = source.Name,
+            Description = source.Description,
+        };
+    }
 }

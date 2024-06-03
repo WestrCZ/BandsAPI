@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\janek\\source\\repos\\BandsAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\services\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\services\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\controllers\\songcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\controllers\\songcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\controllers\\authorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\models\\authors\\authordetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\models\\authors\\authordetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\models\\songs\\songdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\models\\songs\\songdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}|BandsAPI.Utilities\\BandsAPI.Utilities.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi.utilities\\modelerrorextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B29E26A-B3E3-4959-9043-3E3C0CE8F194}|BandsAPI.Utilities\\BandsAPI.Utilities.csproj|solutionrelative:bandsapi.utilities\\modelerrorextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\services\\interfaces\\isongservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\services\\interfaces\\isongservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|c:\\users\\janek\\source\\repos\\bandsapi\\bandsapi\\services\\interfaces\\iauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C9DD095-3798-4462-BA4C-AD7A8CAF97EA}|BandsAPI\\BandsAPI.Api.csproj|solutionrelative:bandsapi\\services\\interfaces\\iauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthorDetail.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Models\\Authors\\AuthorDetail.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Models\\Authors\\AuthorDetail.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Models\\Authors\\AuthorDetail.cs",
+              "RelativeToolTip": "BandsAPI\\Models\\Authors\\AuthorDetail.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAIAwwBoAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T07:33:09.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ModelErrorExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI.Utilities\\ModelErrorExtensions.cs",
+              "RelativeDocumentMoniker": "BandsAPI.Utilities\\ModelErrorExtensions.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI.Utilities\\ModelErrorExtensions.cs",
+              "RelativeToolTip": "BandsAPI.Utilities\\ModelErrorExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T07:26:56.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthorController.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Controllers\\AuthorController.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Controllers\\AuthorController.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Controllers\\AuthorController.cs",
+              "RelativeToolTip": "BandsAPI\\Controllers\\AuthorController.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAIwE8AAABKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T07:14:57.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthorService.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\AuthorService.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Services\\AuthorService.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\AuthorService.cs",
+              "RelativeToolTip": "BandsAPI\\Services\\AuthorService.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAIwE0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T07:31:12.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SongController.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Controllers\\SongController.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Controllers\\SongController.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Controllers\\SongController.cs",
+              "RelativeToolTip": "BandsAPI\\Controllers\\SongController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T07:14:56.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SongService.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\SongService.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Services\\SongService.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\SongService.cs",
+              "RelativeToolTip": "BandsAPI\\Services\\SongService.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAwwA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T12:02:01.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISongService.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\Interfaces\\ISongService.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Services\\Interfaces\\ISongService.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\Interfaces\\ISongService.cs",
+              "RelativeToolTip": "BandsAPI\\Services\\Interfaces\\ISongService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T07:06:43.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAuthorService.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\Interfaces\\IAuthorService.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Services\\Interfaces\\IAuthorService.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Services\\Interfaces\\IAuthorService.cs",
+              "RelativeToolTip": "BandsAPI\\Services\\Interfaces\\IAuthorService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:58:13.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SongDetail.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Models\\Songs\\SongDetail.cs",
+              "RelativeDocumentMoniker": "BandsAPI\\Models\\Songs\\SongDetail.cs",
+              "ToolTip": "C:\\Users\\janek\\source\\repos\\BandsAPI\\BandsAPI\\Models\\Songs\\SongDetail.cs",
+              "RelativeToolTip": "BandsAPI\\Models\\Songs\\SongDetail.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAgwBoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T06:16:29.822Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

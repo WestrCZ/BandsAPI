@@ -32,10 +32,10 @@ public class SongController : ControllerBase
         }
         return Ok(result);
     }
-    [HttpGet("GetListByAuthor/{authorId}")]
-    public async Task<ActionResult<IEnumerable<SongDetail>>> GetList ([FromRoute] Guid authorId)
+    [HttpGet("GetByAuthor/{authorId}")]
+    public async Task<ActionResult<IEnumerable<SongDetail>>> GetByAuthor ([FromRoute] Guid authorId)
     {
-        var result = await songService.GetListByAuthorAsync(authorId);
+        var result = await songService.GetByAuthorAsync(authorId);
         if (!result!.Any())
         {
             return NotFound();
@@ -51,26 +51,31 @@ public class SongController : ControllerBase
     [HttpPost("Create")]
     public async Task<ActionResult<SongDetail>> Create ([FromBody] SongCreate source)
     {
-        var dbEntityDetail = await songService.CreateAsync(source);
+        var result = await songService.CreateAsync(source);
+        ModelState.AddAllErrors(result);
         if (!ModelState.IsValid) { return ValidationProblem(ModelState); }
-        return dbEntityDetail != null ? Ok(dbEntityDetail) : NotFound();
+        return Ok(result.Item);
     }
     [HttpPatch("Update/{id}")]
     public async Task<ActionResult<SongDetail>> Update (
         [FromBody] JsonPatchDocument<SongUpdate> patch,
         [FromRoute] Guid id)
     {
-        var dbEntity = await context.Songs.FirstOrDefaultAsync(x => x.Id == id);
+        var dbEntity = mapper.FromDetail(await songService.GetAsync(id));
         if (dbEntity == null) return NotFound();
-        var entityToUpdate = mapper.ToUpdate(dbEntity);
-        patch.ApplyTo(entityToUpdate);
+        var targetUpdateModel = mapper.ToUpdate(dbEntity);
+        patch.ApplyTo(targetUpdateModel);
+        var result = await songService.UpdateAsync(targetUpdateModel, dbEntity);
+        ModelState.AddAllErrors(result);
         if (!ModelState.IsValid) return ValidationProblem(ModelState);
-        return Ok(await songService.UpdateAsync(entityToUpdate, dbEntity));
+        return Ok(result.Item);
     }
     [HttpDelete("Delete/{id}")]
     public async Task<IActionResult> DeleteSongAsync([FromRoute] Guid id)
     {
         var result = await songService.DeleteAsync(id);
-        return result == new OkResult() ? NoContent() : NotFound();
+        ModelState.AddAllErrors(result);
+        if (!ModelState.IsValid) { return ValidationProblem(ModelState); }
+        return NoContent();
     }
 }
